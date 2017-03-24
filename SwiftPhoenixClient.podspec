@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SwiftPhoenixClient"
-  s.version          = "0.5.0"
+  s.version          = "0.6.0"
   s.summary          = "Connect your Phoenix and iOS applications through WebSockets!"
 
 # This description is used to generate tags and improve search results.
@@ -30,21 +30,14 @@ http://www.phoenixframework.org/docs/channels
                        DESC
 
   s.homepage         = "https://github.com/davidstump/SwiftPhoenixClient"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "David Stump" => "david@davidstump.net" }
   s.source           = { :git => "https://github.com/davidstump/SwiftPhoenixClient.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '9.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
-  #s.resource_bundles = {
-  #  'SwiftPhoenixClient' => ['Pod/Assets/*.png']
-  #}
+  s.source_files = 'Sources/*.swift'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'Starscream', '~> 2.0.0'
 end
