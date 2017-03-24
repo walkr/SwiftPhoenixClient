@@ -344,7 +344,7 @@ public struct Phoenix {
          Indicates if connection is established
          - returns: Bool
          */
-        func isConnected() -> Bool {
+        public func isConnected() -> Bool {
             if let connection = self.conn {
                 return connection.isConnected
             } else {
@@ -356,7 +356,7 @@ public struct Phoenix {
         /**
          Rejoins all Phoenix.Channel instances
          */
-        func rejoinAll() {
+        public func rejoinAll() {
             for chan in channels {
                 rejoin(chan: chan as Phoenix.Channel)
             }
@@ -366,7 +366,7 @@ public struct Phoenix {
          Rejoins a given Phoenix Channel
          - parameter chan: Phoenix.Channel
          */
-        func rejoin(chan: Phoenix.Channel) {
+        public func rejoin(chan: Phoenix.Channel) {
             chan.reset()
             if let topic = chan.topic, let joinMessage = chan.message {
                 let payload = Phoenix.Payload(topic: topic, event: "phx_join", message: joinMessage)
@@ -514,7 +514,7 @@ public struct Phoenix {
                 json += "\"payload\": \(payloadMessage)"
             }
             json += "}"
-            
+
             return json
         }
     }
